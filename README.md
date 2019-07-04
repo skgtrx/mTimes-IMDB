@@ -5,7 +5,7 @@ mTimes is a desktop application which provides movies/TV series details based on
 
 ### Prerequisites
 
-Before running Adjutor on your system you need to install few dependencies/packages.
+Before running mTimes on your system you need to install few dependencies/packages.
 
 ```
 pip install requests
@@ -14,13 +14,13 @@ pip install requests
 pip install lxml
 ```
 ```
+pip install kivy
+```
+```
 pip install kivy.deps.glew 
 pip install kivy.deps.gstreamer 
 pip install kivy.deps.sdl2 
 pip install kivy.deps.angle
-```
-```
-pip install kivy
 ```
 ```
 pip install numpy
