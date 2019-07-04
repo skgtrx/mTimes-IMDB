@@ -14,6 +14,12 @@ pip install requests
 pip install lxml
 ```
 ```
+pip install kivy.deps.glew 
+pip install kivy.deps.gstreamer 
+pip install kivy.deps.sdl2 
+pip install kivy.deps.angle
+```
+```
 pip install kivy
 ```
 ```
