@@ -1,0 +1,198 @@
+
+#:import Label kivy.uix.label.Label
+#:import Button kivy.uix.button.Button
+ScreenManager:
+    StartScreen: 
+    SelectScreen:
+    SearchByNameScreen:
+    SearchByIdScreen:
+
+<StartScreen>:
+	name: 'start_screen'
+    GridLayout:
+		Label:
+			background_color: 0, 0, 0, 0
+			Image:
+				source: 'icons/logo.png'
+				y: self.parent.y + 250
+				x: self.parent.width/2.0 + 30
+				size: 250, 250
+				allow_stretch: True
+
+    GridLayout:
+		Button:
+			on_press: 
+				app.root.transition.direction = 'left'
+				app.root.current = 'select_screen'
+			background_normal:  "icons/start.png"
+        	background_down:    "icons/start.png"
+			size: 400, 300
+			y: self.parent.y - 50
+			x: self.parent.width/2.0 - 185
+
+<SelectScreen>:
+    name: 'select_screen'
+	GridLayout:
+		padding: 50
+		rows:3
+		spacing: 30, 30
+		Button:
+			on_press:
+                app.root.transition.direction = 'left' 
+                app.root.current = 'mvname'
+			
+			background_normal:  'icons/name1.png'
+			background_down: 'icons/name1.png'
+		Button:
+			on_press: 
+                app.root.transition.direction = 'left' 
+                app.root.current = 'mvid'
+			markup: True
+			background_normal:  'icons/id2.png'
+			background_down: 'icons/id2.png'
+
+	AnchorLayout:
+		anchor_x: 'center'
+		anchor_y: 'bottom'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: 1, .1
+			Button:
+				on_press: 
+					app.root.transition.direction = 'right'
+					app.root.current = 'start_screen'
+				markup: True
+				text: "[size=30][b]Back[/b][/size]"
+			Button:
+				on_press: app.stop()
+				markup: True
+				text: "[size=30][b]Exit[/b][/size]"
+        
+<SearchByNameScreen>:
+    name: 'mvname'
+    GridLayout:
+		rows:1
+		cols:2
+		padding:20,20,20,550
+		TextInput:
+			id: movname
+			markup: True
+			hint_text: 'Movie Name'
+			multiline:False
+			readonly: False
+			focus:True
+		Button:
+			size_hint_x: .3
+			markup: True
+			text: '[b]Search[/b]'
+			on_press : root.get_movie_details()
+	GridLayout:
+		cols: 1
+		rows: 1
+		padding: 10,0,10,400
+		Label:
+			id: abs_title
+			markup: True
+
+	GridLayout:
+		cols:1
+		rows:1
+		padding: 10,115,10,325
+		ScrollView:
+			#size_hint_y: .9
+			Label:
+				id: movname_detail_absolute
+				markup: True
+				font_size: 16
+				text_size: self.width, None
+				size_hint_y: None
+				height: self.texture_size[1]
+				
+	GridLayout:
+		cols: 1
+		rows: 1
+		padding: 10,270,10, 285
+		Label:
+			id: rel_title
+			markup: True
+	GridLayout:
+		cols:1
+		rows:1
+		padding: 10,315,10,70
+		ScrollView:
+			#size_hint_y: .9
+			Label:
+				id: movname_detail_relative
+				markup: True
+				font_size: 16
+				text_size: self.width, None
+				size_hint_y: None
+				height: self.texture_size[1]
+
+    AnchorLayout:
+		anchor_x: 'center'
+		anchor_y: 'bottom'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: 1, .1
+			Button:
+				on_press: 
+					app.root.transition.direction = 'right'
+					app.root.current = 'select_screen'
+				markup: True
+				text: "[size=30][b]Back[/b][/size]"
+			Button:
+				on_press: app.stop()
+				markup: True
+				text: "[size=30][b]Exit[/b][/size]"
+
+<SearchByIdScreen>:
+    name: 'mvid'
+    GridLayout:
+		rows:1
+		cols:2
+		padding:20,20,20,550
+		TextInput:
+			id: movid
+			markup: True
+			hint_text: 'Movie ID'
+			#on_text: root.suggestor(self.text)
+			multiline:False
+			readonly: False
+			focus:True
+		Button:
+			size_hint_x: .3
+			markup: True
+			text: '[b]Search[/b]'
+			on_press : root.get_movie_by_id()
+
+    GridLayout:
+		cols:1
+		rows:1
+		padding: 10,70,10,70
+		ScrollView:
+			#size_hint_y: .9
+			Label:
+				id: movid_detail
+				markup: True
+				font_size: 16
+				text_size: self.width, None
+				size_hint_y: None
+				height: self.texture_size[1]
+
+    AnchorLayout:
+		anchor_x: 'center'
+		anchor_y: 'bottom'
+		BoxLayout:
+			orientation: 'horizontal'
+			size_hint: 1, .1
+			Button:
+				on_press: 
+					app.root.transition.direction = 'right'
+					app.root.current = 'select_screen'
+				markup: True
+				text: "[size=30][b]Back[/b][/size]"
+			Button:
+				on_press: app.stop()
+				markup: True
+				text: "[size=30][b]Exit[/b][/size]"
