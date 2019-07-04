@@ -1,8 +1,5 @@
 # mTimes
-mTimes provides movies/TV series details based on their name or IMDB Id.
-
-# Adjutor
-Utility application purely created in python-3 and kivy GUI framework by leveraging the power of open source API's
+mTimes is a desktop application which provides movies/TV series details based on their name or IMDB Id.
 
 ## Getting Started
 
@@ -25,6 +22,9 @@ pip install numpy
 ```
 pip install pandas
 ```
+## Presentation
+
+Presenation of this application is available above with name "mTimes.pptx"
 
 ## Running the tests
 
