@@ -35,10 +35,10 @@ Presenation of this application is available above with name "mTimes.pptx"
 ## Running the tests
 
 After installing all the dependencies. You can simply test the application by running the `mTimes.py` file.
-Step-1: Click on the `Start` button.
-Step-2: Select either of the option `Search by Name` or `Search by ID`.
-Step-3: If select `Search by Name`, enter the name of the movie like Eg. `the nun 2 (2019)` for exact match or just type `nun`.
-Step-4: If select `Search by ID`, enter the id of the movie like Eg. `tt9916720`.
+Step-1: Click on the `Start` button.</br>
+Step-2: Select either of the option `Search by Name` or `Search by ID`.</br>
+Step-3: If select `Search by Name`, enter the name of the movie like Eg. `the nun 2 (2019)` for exact match or just type `nun`.</br>
+Step-4: If select `Search by ID`, enter the id of the movie like Eg. `tt9916720`.</br>
 
 ## Built With
 
